@@ -1,26 +1,10 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  output: "standalone", // Gör builden mindre och optimerad
+const nextConfig = {};
 
-  experimental: {
-    optimizeCss: true, // Komprimerar CSS
-  },
-
-  webpack: (config) => {
-    config.optimization.splitChunks = {
-      chunks: "all",
-      maxSize: 2000000, // Maxstorlek 2MB per bundle
-    };
-    return config;
-  },
-
+// next.config.mjs
+export default {
   images: {
-    domains: ["joybilder.blob.core.windows.net"], // Din Blob Storage domän
+    domains: ['joybilder.blob.core.windows.net'], // Lägg till din Blob Storage domän här
   },
-
-  compress: true, // Gzip-komprimering för att minska storlek
-
-  productionBrowserSourceMaps: false, // Tar bort sourcemaps för att minska storlek
 };
 
-export default nextConfig;
