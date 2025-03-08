@@ -3,14 +3,13 @@ const nextConfig = {
   output: "standalone", // Gör builden mindre och optimerad
 
   experimental: {
-    optimizeCss: true, // Minskar storleken på CSS-filer
-    turboMode: true, // Förbättrar build-hastigheten
+    optimizeCss: true, // Komprimerar CSS
   },
 
   webpack: (config) => {
     config.optimization.splitChunks = {
       chunks: "all",
-      maxSize: 2000000, // Dela upp stora filer i mindre bitar (2MB)
+      maxSize: 2000000, // Maxstorlek 2MB per bundle
     };
     return config;
   },
@@ -18,6 +17,10 @@ const nextConfig = {
   images: {
     domains: ["joybilder.blob.core.windows.net"], // Din Blob Storage domän
   },
+
+  compress: true, // Gzip-komprimering för att minska storlek
+
+  productionBrowserSourceMaps: false, // Tar bort sourcemaps för att minska storlek
 };
 
 export default nextConfig;
