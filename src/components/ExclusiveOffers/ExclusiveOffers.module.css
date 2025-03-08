@@ -1,0 +1,63 @@
+/* Main section */
+.exclusiveOffers {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: #f5f5f5;
+}
+
+.offerGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  justify-items: center;
+}
+
+/* Styling for each offer card */
+.offerCard {
+  width: 100%;
+  max-width: 300px;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  background-color: #ffffff;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+}
+
+.offerImage {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.offerTitle {
+  font-size: 1.5rem;
+  color: #4A5A39;
+  font-weight: bold;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 1rem;
+}
+
+/* Consistent description height */
+.offerDescription {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.6;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limit to 3 lines */
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 1008px) {
+  .offerGrid {
+    grid-template-columns: 1fr;
+  }
+}

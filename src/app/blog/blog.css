@@ -1,0 +1,102 @@
+/* Blog-sidans grundstruktur */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  margin-top: 200px;
+  font-family: Arial, sans-serif;
+  background-color: var(--background-color); /* Ljus beige bakgrund */
+  color: var(--text-color); /* Mörkgrå textfärg */
+  line-height: 1.6;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtil skugga runt behållaren */
+}
+
+/* Huvudrubrik för bloggsidan */
+.pageTitle {
+  text-align: center;
+  font-size: 2.2rem;
+  color: var(--primary-color); /* Loggans gröna färg */
+  margin-bottom: 30px;
+  font-weight: bold;
+  font-family: 'Playfair Display', serif; /* Serif för en elegant touch */
+}
+/* Laddningsmeddelande */
+.loadingMessage {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* "Create New Post"-knappen */
+.createButton {
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  color: #fff;
+  background-color: var(--primary-color); /* Loggans gröna */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.createButton:hover {
+  background-color: var(--secondary-color); /* Mörkgrön kontrast vid hover */
+  transform: translateY(-2px); /* Liten upplyftande effekt vid hover */
+}
+
+/* Stil för varje enskilt inlägg */
+/* Stil för varje inlägg */
+.postItem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 1px solid var(--secondary-color);
+  border-radius: 8px;
+  background-color: #fafafa;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.postItem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Lägg till en flexbox behållare för titel och knappen */
+.postHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.postTitle {
+  font-size: 1.8rem;
+  color: var(--text-color);
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/* Stil för Delete-knappen placerad till höger */
+.deleteButton {
+  padding: 8px 16px;
+  font-size: 0.8rem;
+  color: #fff;
+  background-color: #e74c3c;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-left: auto;
+}
+
+.deleteButton:hover {
+  background-color: #c0392b;
+  transform: translateY(-2px);
+}

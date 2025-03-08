@@ -1,0 +1,101 @@
+.section {
+  margin: 2rem 0;
+  padding: 1rem;
+  background-color: var(--background-color);
+  border: 1px solid var(--secondary-color);
+  border-radius: 8px;
+  color: var(--text-color);
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+.cities {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.cityButton {
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  border: 1px solid var(--secondary-color);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.cityButton:hover {
+  background-color: var(--accent-color);
+  color: var(--text-color);
+}
+
+.activities {
+  margin-top: 1rem;
+}
+
+.cityTitle {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+.activityList {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.activityItem {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  background-color: var(--background-color);
+  border: 1px solid var(--secondary-color);
+  border-radius: 4px;
+}
+
+.contact {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.contactButton {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  border: 1px solid var(--secondary-color);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.contactButton:hover {
+  background-color: var(--accent-color);
+  color: var(--text-color);
+}
+.cityButton {
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-color); /* Använd den definierade huvudfärgen */
+  color: var(--background-color); /* Textfärg som kontrasterar mot knappen */
+  border: 1px solid var(--secondary-color); /* För kontrast */
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem; /* Justera textstorlek om det behövs */
+  transition: background-color 0.3s, color 0.3s;
+  text-align: center;
+}
+
+.cityButton:hover {
+  background-color: var(--accent-color); /* Ändra bakgrundsfärg vid hover */
+  color: var(--text-color); /* Textfärg vid hover */
+}

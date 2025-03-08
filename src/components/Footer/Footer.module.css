@@ -1,0 +1,88 @@
+/* src/components/Footer/Footer.module.css */
+
+.footer {
+  background-color: rgba(59, 63, 51, 0.85); /* Mörk grön med 85% opacitet */
+  color: #ffffff;
+  padding: 2rem 0;
+  font-size: 0.9rem;
+  text-align: center;
+
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+.logoSection {
+  flex: 1 1 200px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  color: #A89C8A;
+}
+
+.tagline {
+  margin-top: 0.5rem;
+  font-style: italic;
+  color: #cccccc;
+}
+
+.linksSection,
+.contactSection,
+.socialSection {
+  flex: 1 1 200px;
+}
+
+.sectionTitle { /* Uppdaterad klass för h3 */
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #A89C8A;
+}
+
+/* Gör ul och li till lokala klasser */
+.linkList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.linkItem {
+  margin: 0.5rem 0;
+}
+
+.link {
+  color: #cccccc;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: #A89C8A;
+}
+
+.socialIcons a {
+  margin-right: 1rem;
+  color: #cccccc;
+  text-decoration: none;
+}
+
+.socialIcons a:hover {
+  color: #A89C8A;
+}
+
+.contactSection p {
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  border-top: 1px solid #555;
+  padding-top: 1rem;
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: #888888;
+}

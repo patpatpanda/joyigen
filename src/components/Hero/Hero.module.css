@@ -1,0 +1,186 @@
+/* src/components/Hero/Hero.module.css */
+
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  text-align: center;
+  overflow: hidden;
+  padding: 0 20px; /* För bättre responsiv marginal */
+}
+
+.backgroundVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(10, 10, 10, 0.5);
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 150px; /* Minskat för att passa bättre på mindre skärmar */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #E0E0E0;
+  max-width: 90%;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.ctaButton {
+  padding: 0.7rem 2rem;
+  background-color: transparent;
+  color: #ffffff;
+  border: 2px solid #A89C8A;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: background-color 0.4s ease, transform 0.3s ease, box-shadow 0.4s ease;
+}
+
+.ctaButton:hover {
+  background-color: #A89C8A;
+  border-color: #A89C8A;
+  transform: scale(1.08);
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsiva justeringar för mindre skärmar */
+@media (max-width: 768px) {
+  .subtitle {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .ctaButton {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 0 1rem;
+  }
+  .subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+  }
+  .ctaButton {
+    font-size: 0.8rem;
+    padding: 0.5rem 1.5rem;
+  }
+}
+
+/* Logotypstil */
+.logo {
+  font-family: "Georgia", serif;
+  text-align: center;
+  color: #fff;
+  padding: 20px;
+  background-color: transparent;
+}
+
+.lineContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.logo h1 {
+  font-size: 2rem; /* Minskat för bättre anpassning till mindre skärmar */
+  font-weight: normal;
+  margin: 0;
+  color: #fff;
+}
+
+.lineLeft, .lineRight {
+  height: 2px;
+  width: 40px; /* Anpassad bredd */
+  background-color: #B8A383;
+}
+
+.logoLine {
+  height: 2px;
+  width: 40%; /* Dynamiskt anpassad för olika skärmar */
+  margin: 10px auto;
+  background-color: #B8A383;
+}
+
+.logo h2 {
+  font-size: 0.9rem;
+  font-weight: normal;
+  color: #FFF;
+  margin-top: 5px;
+  font-style: italic;
+}
+
+/* Responsiva logotypjusteringar */
+@media (max-width: 768px) {
+  .logo h1 {
+    font-size: 1.8rem;
+  }
+  .lineLeft, .lineRight {
+    width: 30px;
+  }
+  .logoLine {
+    width: 35%;
+  }
+  .logo h2 {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo h1 {
+    font-size: 0.9rem;
+  }
+  .lineLeft, .lineRight {
+    width: 25px;
+  }
+  .logoLine {
+    width: 30%;
+  }
+  .logo h2 {
+    font-size: 0.8rem;
+  }
+}

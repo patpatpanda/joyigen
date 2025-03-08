@@ -1,0 +1,372 @@
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(59, 63, 51, 0.85); /* Mörk grön med 85% opacitet */
+  color: #f0f0f0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+  padding: 0 2rem;
+  backdrop-filter: blur(8px);
+}
+
+.headerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.logoText {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #f7f7f7;
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.nav {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  transition: opacity 0.3s ease;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.nav a {
+  color: #f7f7f7;
+  font-weight: 500;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 5px;
+  transition: color 0.4s ease;
+}
+
+.nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #f7f7f7; /* Samma färg som texten */
+  transform: scaleX(0); /* Börjar med ett streck som är dolt */
+  transition: transform 0.3s ease; /* Smidig animering */
+  transform-origin: bottom right;
+}
+
+.nav a:hover {
+  color: #f7f7f7;
+}
+
+.nav a:hover::after {
+  transform: scaleX(1); /* Strecket syns på hover */
+  transform-origin: bottom left;
+}
+
+/* Språkknapp */
+.languageButton {
+  background: none;
+  border: none;
+  color: #f7f7f7;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 5px;
+  transition: color 0.4s ease;
+ right:0
+}
+
+.languageButton::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #f7f7f7;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: bottom right;
+}
+
+.languageButton:hover {
+
+}
+
+.languageButton:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Dropdown meny */
+.dropdown {
+  position: relative;
+}
+
+.dropdownMenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: rgba(50, 50, 50, 0.95); /* Mörkare bakgrund */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  padding: 0.5rem 0;
+  list-style: none;
+  border-radius: 6px;
+  min-width: 160px;
+  z-index: 10;
+}
+
+.dropdown:hover .dropdownMenu {
+  display: block;
+}
+
+.dropdownMenuOpen {
+  display: block; /* Visar dropdown vid klick på mobilen */
+}
+
+.dropdownMenu li {
+  padding: 0.5rem 1.5rem;
+}
+
+.dropdownMenu li a {
+  color: #f7f7f7;
+  text-decoration: none;
+  font-weight: 400;
+  display: block;
+  transition: color 0.3s ease;
+}
+
+.dropdownMenu li a:hover {
+  color: #f7f7f7;
+}
+
+/* Menyknapp - öppen eller stängd */
+.menuButton {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: #f0f0f0;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.3s ease;
+}
+
+.closeButton {
+  font-size: 2rem;
+  color: #f7f7f7;
+}
+
+.menuButton:hover {
+  color: #f7f7f7;
+}
+
+@media (max-width: 768px) {
+  /* Gör menyknappen synlig på mobiler */
+  .menuButton {
+    display: block;
+  }
+
+  /* Dölj huvudnavigeringen för mobilen */
+  .nav {
+    display: none;
+    flex-direction: column;
+    gap: 1.5rem;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.98); /* Mörkare bakgrund */
+    padding: 5rem 2rem;
+    width: 250px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    color: #f0f0f0;
+  }
+
+  .navOpen {
+    display: flex;
+    transform: translateX(0); /* Skjuts in från höger */
+  }
+
+  /* Menyalternativ och dropdown */
+  .nav a,
+  .dropdownMenu li a {
+    color: #f7f7f7; /* Ljusare text för mobil */
+    font-size: 1.1rem;
+    padding: 0.5rem;
+  }
+
+  .nav a:hover,
+  .dropdownMenu li a:hover {
+    color: #f7f7f7;
+  }
+
+  /* Anpassar dropdownen i mobilen */
+  .dropdownMenu {
+    position: static;
+    box-shadow: none;
+    padding: 0;
+    display: block;
+  }
+
+  /* Visar mobil-dropdown med vit text */
+  .dropdownMenu li a {
+    color: #f7f7f7;
+  }
+
+  .dropdownMenu li a:hover {
+    color: #f7f7f7;
+  }
+}
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #f7f7f7;
+  font-family: 'Playfair Display', serif;
+  padding: 0 20px;
+}
+
+.lineContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* Avstånd mellan linjer och text */
+}
+
+.logo h1 {
+  font-size: 1.2rem; /* Mindre storlek för att passa headern */
+  font-weight: bold;
+  margin: 0;
+  color: #f7f7f7;
+}
+
+.lineLeft, .lineRight {
+  height: 2px;
+  width: 30px; /* Mindre bredd för linjerna i headern */
+  background-color: #A89C8A; /* Gyllene sand för linjerna */
+}
+
+/* Linjen under "Destination of Joy" */
+.logoLine {
+  height: 2px;
+  width: 40%; /* Anpassa bredden efter behov */
+  margin: 5px auto;
+  background-color: #A89C8A;
+}
+
+.logo h2 {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #f7f7f7;
+  margin-top: 4px;
+}
+
+/* Anpassningar för mindre skärmar */
+@media (max-width: 768px) {
+  .logo h1 {
+    font-size: 1rem;
+  }
+  .lineLeft, .lineRight {
+    width: 20px;
+  }
+  .logoLine {
+    width: 35%; /* Justerad bredd för mindre skärmar */
+  }
+  .logo h2 {
+    font-size: 0.65rem;
+  }
+}
+.languageButton {
+  padding: 0.6rem 1.2rem;
+  background-color: #A89C8A; /* Gyllene sand för att matcha designen */
+  color: #f7f7f7;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  font-family: 'Playfair Display', serif;
+}
+
+.languageButton:hover {
+  background-color: #6B7754; /* Mörkare grön nyans för hover */
+  transform: scale(1.05); /* Lite större vid hover */
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.languageButton:active {
+  transform: scale(0.98); /* Liten intryckseffekt vid klick */
+}
+.dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.dropdownLink {
+  color: #f7f7f7;
+  text-decoration: none;
+  padding-right: 8px;
+}
+
+.dropdownButton {
+  background: none;
+  border: none;
+  color: #f7f7f7;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.dropdownMenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: rgba(50, 50, 50, 0.95);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  padding: 0.5rem 0;
+  list-style: none;
+  border-radius: 6px;
+  min-width: 160px;
+  z-index: 10;
+}
+
+.dropdownMenuOpen {
+  display: block;
+}
+
+.dropdownMenu li {
+  padding: 0.5rem 1.5rem;
+}
+
+.dropdownMenu li a {
+  color: #f7f7f7;
+  text-decoration: none;
+  font-weight: 400;
+  display: block;
+  transition: color 0.3s ease;
+}
+
+.dropdownMenu li a:hover {
+  color: #A89C8A;
+}

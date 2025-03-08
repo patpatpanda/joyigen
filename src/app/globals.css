@@ -1,0 +1,46 @@
+
+/* src/styles/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  --primary-color: #6B7754; /* Loggans gröna */
+  --background-color: #F5F5F0; /* Ljus beige */
+  --secondary-color: #3B3F33; /* Mörkgrön för kontrast */
+  --accent-color: #B8A383; /* Gyllene sand */
+  --text-color: #4A4A48; /* Mörkgrå för text */
+}
+body {
+  color: var(--text-color);
+  font-family: Arial, sans-serif;
+  overflow-x: hidden; /* Förhindrar horisontell rullning */
+  margin: 0; /* Tar bort standardmarginaler på body */
+}
+
+html, body {
+  width: 100%; /* Ser till att sidan håller sig inom fönstrets bredd */
+}
+
+header, footer {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  padding: 1rem;
+}
+
+h1, h2, h3 {
+  color: var(--secondary-color);
+}
+
+button {
+  background-color: var(--secondary-color);
+  color: var(--background-color);
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--accent-color);
+}

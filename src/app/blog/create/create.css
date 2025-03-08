@@ -1,0 +1,106 @@
+/* Stilmall för Create Post-sidan */
+
+/* Grundinställningar för hela sidan */
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: var(--background-color); /* Bakgrundsfärg */
+  color: var(--text-color); /* Textfärg */
+  line-height: 1.6;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-top: 200px;
+}
+
+/* Rubrik för formuläret */
+.pageTitle {
+  text-align: center;
+  font-size: 2.2rem;
+  color: var(--primary-color); /* Huvudfärg */
+  margin-bottom: 30px;
+  font-weight: bold;
+  font-family: 'Playfair Display', serif;
+}
+
+/* Stil för formulärfälten */
+.formGroup {
+  margin-bottom: 20px;
+}
+
+.formGroup label {
+  display: block;
+  font-size: 1rem;
+  color: var(--text-color); /* Textfärg */
+  margin-bottom: 8px;
+}
+
+.formGroup input[type="text"],
+.formGroup input[type="password"],
+.formGroup textarea,
+.formGroup input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid var(--secondary-color); /* Mörkgrön ram */
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s ease;
+  background-color: var(--background-color); /* Bakgrundsfärg */
+  color: var(--text-color); /* Textfärg */
+}
+
+.formGroup input[type="text"]:focus,
+.formGroup input[type="password"]:focus,
+.formGroup textarea:focus {
+  border-color: var(--accent-color); /* Gyllene accentfärg vid fokus */
+}
+
+/* Stil för textarea */
+.formGroup textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Felmeddelande */
+.errorMessage {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+/* Stil för knappar */
+.button {
+  padding: 12px 24px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: var(--primary-color); /* Använd loggans gröna färg */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: var(--secondary-color); /* Mörkgrön kontrast på hover */
+}
+
+.backButton {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  color: var(--primary-color); /* Huvudfärg */
+  background-color: transparent;
+  border: 1px solid var(--primary-color); /* Huvudfärg */
+  border-radius: 5px;
+  font-size: 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.backButton:hover {
+  background-color: var(--primary-color); /* Huvudfärg */
+  color: #fff;
+}
